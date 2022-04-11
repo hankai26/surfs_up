@@ -8,6 +8,7 @@ This study conducted data retrieval and summary statistics for temperatures in J
 
 - Temperatures in June
 The temperatues in June from 2010 to 2017 are recorded in the database and ranges between 64 ℉ and 85 ℉. The average temperature is 74.9 ℉ in June through all available years.
+
 ![June_stat_table](https://github.com/hankai26/surfs_up/blob/main/Resources/Temp_Jun.png)
 
 ![June_fig](https://github.com/hankai26/surfs_up/blob/main/Resources/Fig_Jun.png)
