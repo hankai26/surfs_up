@@ -21,11 +21,14 @@ Base.classes.keys()
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
+# create a session link from Python to our database
+session = Session(engine)
+
 # Set up Flask
 app = Flask(__name__)
 
 # define app for our Flask applicatio
-app = Flask(__name__)
+# app = Flask(__name__)
 
 #import app
 
@@ -36,10 +39,10 @@ def welcome():
     return(
     '''
     Welcome to the Climate Analysis API!
-    Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
+    Available Routes:<br>
+    /api/v1.0/precipitation<br>
+    /api/v1.0/stations<br>
+    /api/v1.0/tobs<br>
     /api/v1.0/temp/start/end
     ''')
 
@@ -60,6 +63,7 @@ def stations():
     return jsonify(stations=stations)
 
 # Create Monthly Temperature Route
+@app.route('/api/v1.0/tobs')
 def temp_monthly():
     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
     results = session.query(Measurement.tobs).\
